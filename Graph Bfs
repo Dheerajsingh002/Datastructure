@@ -1,0 +1,30 @@
+// BFS Traversal
+class BFS
+{
+public boolean bfs(int v,int src,int des,ArrayList<Arraylist<Integer>>)
+{
+Queue<Integer> queue=new LinkedList<>();
+boolean vis[]=new boolean[v];
+for(int i=0;i<v;i++)
+{
+vis[i]=false;
+}
+vis[src]=true;
+q.add(src);
+while(!queue.isEmpty())
+{
+int cur=queue.poll();
+for(int i=0;i<adj.get(cur).size();i++)
+{
+int neighbour=adj.get(cur).get(i);
+if(vis[neighbour]==false)
+{
+vis[neighbour]=true;
+queue.add(neighbour);
+if(neighbour==des)
+return true;
+}
+}
+}
+return false;
+}

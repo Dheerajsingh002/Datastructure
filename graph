@@ -1,0 +1,24 @@
+package com.company;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Scanner;
+
+public class AdjListGraph {
+    static void addEdge(ArrayList<LinkedList<Integer>> adj,int source,int des)
+    {
+        adj.get(source).add(des);
+        adj.get(des).add(source);
+    }
+    public static void main(String[] args) {
+        ArrayList<LinkedList<Integer>> adj=new ArrayList<>();
+        Scanner s=new Scanner(System.in);
+        System.out.println("Enter no. of vertices");
+        int V=s.nextInt();
+        System.out.println("Enter no. of edges");
+        int E=s.nextInt();
+        for(int i=0;i<V;i++)
+            adj.add(new LinkedList<>());
+    }
+}

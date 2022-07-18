@@ -1,0 +1,37 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class insertionsort {
+    public static void insertion(int arr[],int n)
+    {
+        int temp,pos;
+        for(int i=1;i<n;i++)
+        {
+            temp=arr[i];
+            pos=i-1;
+            while(pos>=0 && temp<arr[pos])
+            {
+                arr[pos+1]=arr[pos];
+                pos=pos-1;
+            }
+            arr[pos+1]=temp;
+        }
+    }
+    public static void main(String[] args) {
+        Scanner sc=new Scanner(System.in);
+        int n=sc.nextInt();
+        int arr[]=new int[n];
+        for(int i=0;i<n;i++)
+        {
+            arr[i]=sc.nextInt();
+        }
+        insertion(arr,n);
+        for(int i=0;i<n;i++)
+        {
+            System.out.print(arr[i]+" ");
+        }
+
+    }
+
+}

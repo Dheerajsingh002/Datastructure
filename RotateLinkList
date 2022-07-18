@@ -1,0 +1,49 @@
+public class RotateLinkLIst {
+     class Node {
+        int data;
+        Node next;
+    }
+     Node head;
+     RotateLinkLIst(){
+         head=null;
+     }
+          void add(int data){
+
+            Node n1=new Node();
+            n1.data=data;
+            n1.next=null;
+            if(head==null){
+                head=n1;
+
+            }
+            else{
+                Node current=head;
+                while(current.next!=null){
+                    current=current.next;
+                }
+                current=n1;
+                current.next=null;
+            }
+
+        }
+        void traverse(){
+            Node current=head;
+            while(current.next!=null){
+                System.out.println(current.data);
+                current=current.next;
+            }
+        }
+
+    public static void main(String[] args) {
+        RotateLinkLIst obj=new RotateLinkLIst();
+        obj.add(1);
+        obj.add(2);
+        obj.add(3);
+        obj.add(4);
+        obj.add(5);
+        obj.add(6);
+        obj.traverse();
+        //System.out.println(obj.head.data);
+    }
+
+}
